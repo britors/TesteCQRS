@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace TesteCQRS.Controllers.Customer.Query
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

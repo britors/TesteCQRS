@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace TesteCQRS.Controllers.Customer.Command
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
         }
     }

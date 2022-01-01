@@ -4,6 +4,7 @@ using System;
 using FluentValidation;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
+using Microsoft.AspNetCore.Http;
 
 namespace TesteCQRS.Controllers.Customer.Command
 {
@@ -25,7 +26,7 @@ namespace TesteCQRS.Controllers.Customer.Command
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
         }
     }
