@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -18,6 +19,10 @@ namespace TesteCQRS.Controllers.Customer.Query
                 var query = new CustomerFindByIdQuery { Id = Id };
                 var items = await mediator.Send(query);
                 return Ok(items);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Errors);
             }
             catch (Exception ex)
             {

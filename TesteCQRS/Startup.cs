@@ -1,4 +1,6 @@
+using FluentValidation.AspNetCore;
 using MediatR;
+using MediatR.Extensions.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,8 @@ namespace TesteCQRS
 
             services.AddControllers();
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddFluentValidation(new[] { Assembly.GetExecutingAssembly() });
+
 
             services.AddSwaggerGen(c =>
             {

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using FluentValidation;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
 
@@ -17,6 +18,10 @@ namespace TesteCQRS.Controllers.Customer.Command
             {
                 var result = await mediator.Send(command);
                 return Ok(result);
+            }
+            catch(ValidationException ex)
+            {
+                return BadRequest(ex.Errors);
             }
             catch (Exception e)
             {
