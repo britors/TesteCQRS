@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TesteCQRS.Application.Domain
+namespace TesteCQRS.Domain
 {
     public class CustomerEntity
     {
@@ -10,18 +10,14 @@ namespace TesteCQRS.Application.Domain
             Name = name;
             Email = email;
         }
-
         public CustomerEntity(Guid id, string name, string email)
         {
             Id = id;
             Name = name;
             Email = email;
         }
-
         public void SetName(string name) =>
             Name = name;
-
-
         public void SetEmail(string email) =>
             Email = email;
 

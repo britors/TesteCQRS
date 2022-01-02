@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
-using TesteCQRS.Application.Domain;
+using TesteCQRS.Domain;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers
 {

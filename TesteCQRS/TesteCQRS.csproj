@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TesteCQRS.Domain\TesteCQRS.Domain.csproj" />
     <ProjectReference Include="..\TesteCQRS.Utils\TesteCQRS.Utils.csproj" />
   </ItemGroup>
 
