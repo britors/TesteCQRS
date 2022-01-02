@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TesteCQRS.Application\TesteCQRS.Application.csproj" />
-    <ProjectReference Include="..\TesteCQRS.Utils\TesteCQRS.Shared.csproj" />
+    <ProjectReference Include="..\TesteCQRS.Shared\TesteCQRS.Shared.csproj" />
   </ItemGroup>
 
 </Project>
