@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
@@ -8,9 +9,13 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
 {
     public class CustomerCreateHandler : IRequestHandler<CustomerCreateCommand, CustomerCreateResponse>
     {
+        private readonly IMapper _mapper;
+        public CustomerCreateHandler(IMapper mapper) =>
+           _mapper = mapper;
+
         public async Task<CustomerCreateResponse> Handle(CustomerCreateCommand request, CancellationToken cancellationToken)
         {
-            var customer = new CustomerEntity(request.Name, request.Email);
+            var customer = _mapper.Map<CustomerEntity>(request);
             var response = new CustomerCreateResponse
             {
                 Id = customer.Id

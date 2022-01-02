@@ -16,6 +16,10 @@ namespace TesteCQRS.Application.Domain
             Name = name;
             Email = email;
         }
+        public CustomerEntity(Guid id) 
+            => Id = id;
+        
+
         public void SetName(string name) =>
             Name = name;
         public void SetEmail(string email) =>

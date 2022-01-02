@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using TesteCQRS.Application;
 
 namespace TesteCQRS
 {
@@ -34,7 +35,7 @@ namespace TesteCQRS
             var applicationAssembly = AppDomain.CurrentDomain.Load("TesteCQRS.Application");
             services.AddMediatR(applicationAssembly);
             services.AddFluentValidation(new[] { applicationAssembly });
-
+            ApplicationConfiguration.MapperObjects(services);
 
             services.AddSwaggerGen(c =>
             {
