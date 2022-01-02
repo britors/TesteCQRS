@@ -15,7 +15,7 @@ namespace TesteCQRS.Application.Queries.Customer.Handlers
 
         public async Task<CustomerFindByIdResponse> Handle(CustomerFindByIdQuery request, CancellationToken cancellationToken)
         {
-            var customer = _mapper.Map<CustomerEntity>(request);
+            var customer = _mapper.Map<CustomerModel>(request);
             var item = new CustomerFindByIdResponse
             {
                 Id = customer.Id,

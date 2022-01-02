@@ -15,7 +15,7 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
 
         public async Task<CustomerCreateResponse> Handle(CustomerCreateCommand request, CancellationToken cancellationToken)
         {
-            var customer = _mapper.Map<CustomerEntity>(request);
+            var customer = _mapper.Map<CustomerModel>(request);
             var response = new CustomerCreateResponse
             {
                 Id = customer.Id

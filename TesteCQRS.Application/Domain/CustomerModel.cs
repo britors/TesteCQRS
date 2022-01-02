@@ -2,21 +2,21 @@
 
 namespace TesteCQRS.Application.Domain
 {
-    public class CustomerEntity
+    public class CustomerModel
     {
-        public CustomerEntity(string name, string email)
+        public CustomerModel(string name, string email)
         {
             Id = Guid.NewGuid();
             Name = name;
             Email = email;
         }
-        public CustomerEntity(Guid id, string name, string email)
+        public CustomerModel(Guid id, string name, string email)
         {
             Id = id;
             Name = name;
             Email = email;
         }
-        public CustomerEntity(Guid id) 
+        public CustomerModel(Guid id) 
             => Id = id;
         
 
