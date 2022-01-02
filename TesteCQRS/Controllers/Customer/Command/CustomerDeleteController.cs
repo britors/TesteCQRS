@@ -3,9 +3,9 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
+using TesteCQRS.Utils;
 
 namespace TesteCQRS.Controllers.Customer.Command
 {
@@ -23,11 +23,7 @@ namespace TesteCQRS.Controllers.Customer.Command
             }
             catch (ValidationException ex)
             {
-                var erros = ex.Errors
-                            .GroupBy(failure => failure.PropertyName)
-                            .ToDictionary(failures => failures.Key,
-                                                failures => failures
-                                                .Select(failure => failure.ErrorMessage));
+                var erros = ValidatorErrorsUtil.GetErrorsFromException(ex);
                 return BadRequest(erros);
 
             }

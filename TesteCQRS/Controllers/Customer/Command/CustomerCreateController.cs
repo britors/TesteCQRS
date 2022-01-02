@@ -5,7 +5,7 @@ using FluentValidation;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
 using Microsoft.AspNetCore.Http;
-using System.Linq;
+using TesteCQRS.Utils;
 
 namespace TesteCQRS.Controllers.Customer.Command
 {
@@ -23,11 +23,7 @@ namespace TesteCQRS.Controllers.Customer.Command
             }
             catch (ValidationException ex)
             {
-                var erros = ex.Errors
-                            .GroupBy(failure => failure.PropertyName)
-                            .ToDictionary(failures => failures.Key, 
-                                                failures => failures
-                                                .Select(failure => failure.ErrorMessage));
+                var erros = ValidatorErrorsUtil.GetErrorsFromException(ex);
                 return BadRequest(erros);
             }
             catch (Exception e)
