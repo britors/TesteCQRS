@@ -5,7 +5,7 @@ using FluentValidation;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
 using Microsoft.AspNetCore.Http;
-using TesteCQRS.Utils;
+using TesteCQRS.Shared.Utils;
 
 namespace TesteCQRS.Controllers.Customer.Command
 {

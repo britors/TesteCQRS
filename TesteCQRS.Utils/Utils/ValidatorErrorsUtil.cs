@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TesteCQRS.Utils
+namespace TesteCQRS.Shared.Utils
 {
     public static class ValidatorErrorsUtil
     {

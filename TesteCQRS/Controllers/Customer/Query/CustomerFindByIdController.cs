@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Queries.Customer;
-using TesteCQRS.Utils;
+using TesteCQRS.Shared.Utils;
 
 namespace TesteCQRS.Controllers.Customer.Query
 {

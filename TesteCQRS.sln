@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteCQRS", "TesteCQRS\TesteCQRS.csproj", "{295E7DDB-8DDE-49D1-9C26-B563C2979FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCQRS.Utils", "TesteCQRS.Utils\TesteCQRS.Utils.csproj", "{37ADB06A-CE6B-4061-96C4-5B8200D3C731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteCQRS.Shared", "TesteCQRS.Utils\TesteCQRS.Shared.csproj", "{37ADB06A-CE6B-4061-96C4-5B8200D3C731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCQRS.Domain", "TesteCQRS.Domain\TesteCQRS.Domain.csproj", "{D84F963A-47D2-4E72-A3F5-16D867E3B865}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCQRS.Application", "TesteCQRS.Application\TesteCQRS.Application.csproj", "{5156A9C7-8CC6-4660-8EBF-A46A012C9A46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{37ADB06A-CE6B-4061-96C4-5B8200D3C731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37ADB06A-CE6B-4061-96C4-5B8200D3C731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37ADB06A-CE6B-4061-96C4-5B8200D3C731}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D84F963A-47D2-4E72-A3F5-16D867E3B865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D84F963A-47D2-4E72-A3F5-16D867E3B865}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D84F963A-47D2-4E72-A3F5-16D867E3B865}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D84F963A-47D2-4E72-A3F5-16D867E3B865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5156A9C7-8CC6-4660-8EBF-A46A012C9A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5156A9C7-8CC6-4660-8EBF-A46A012C9A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5156A9C7-8CC6-4660-8EBF-A46A012C9A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5156A9C7-8CC6-4660-8EBF-A46A012C9A46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
