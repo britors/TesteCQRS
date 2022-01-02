@@ -10,7 +10,7 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
     {
         public async Task<CustomerCreateResponse> Handle(CustomerCreateCommand request, CancellationToken cancellationToken)
         {
-            var customer = new CustomerModel(request.Name,request.Email);
+            var customer = new CustomerEntity(request.Name,request.Email);
             var response = new CustomerCreateResponse
             {
                 Id = customer.Id
