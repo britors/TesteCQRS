@@ -5,6 +5,7 @@ using FluentValidation;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer;
 using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace TesteCQRS.Controllers.Customer.Command
 {
@@ -20,9 +21,14 @@ namespace TesteCQRS.Controllers.Customer.Command
                 var result = await mediator.Send(command);
                 return Ok(result);
             }
-            catch(ValidationException ex)
+            catch (ValidationException ex)
             {
-                return BadRequest(ex.Errors);
+                var erros = ex.Errors
+                            .GroupBy(failure => failure.PropertyName)
+                            .ToDictionary(failures => failures.Key, 
+                                                failures => failures
+                                                .Select(failure => failure.ErrorMessage));
+                return BadRequest(erros);
             }
             catch (Exception e)
             {

@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Queries.Customer;
 
@@ -23,7 +24,13 @@ namespace TesteCQRS.Controllers.Customer.Query
             }
             catch (ValidationException ex)
             {
-                return BadRequest(ex.Errors);
+                var erros = ex.Errors
+                            .GroupBy(failure => failure.PropertyName)
+                            .ToDictionary(failures => failures.Key,
+                                                failures => failures
+                                                .Select(failure => failure.ErrorMessage));
+                return BadRequest(erros);
+
             }
             catch (Exception ex)
             {
