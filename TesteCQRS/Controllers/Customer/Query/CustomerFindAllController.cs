@@ -12,6 +12,8 @@ namespace TesteCQRS.Controllers.Customer.Query
     public class CustomerFindAllController : ControllerBase
     {
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetById([FromServices] IMediator mediator)
         {
             try

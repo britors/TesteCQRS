@@ -14,6 +14,9 @@ namespace TesteCQRS.Controllers.Customer.Command
     public class CustomerUpdateController : ControllerBase
     {
         [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Update([FromServices] IMediator mediator, [FromBody] CustomerUpdateCommand command)
         {
             try
@@ -23,7 +26,7 @@ namespace TesteCQRS.Controllers.Customer.Command
             }
             catch (ValidationException ex)
             {
-                var erros = ValidatorErrorsUtil.GetErrorsFromException(ex);
+                var erros = ValidatorErrorsUtil.GetErrorsFromValidationException(ex);
                 return BadRequest(erros);
 
             }

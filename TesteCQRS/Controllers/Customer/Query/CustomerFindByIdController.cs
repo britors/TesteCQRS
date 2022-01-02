@@ -14,6 +14,9 @@ namespace TesteCQRS.Controllers.Customer.Query
     public class CustomerFindByIdController : ControllerBase
     {
         [HttpGet("{Id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAll([FromServices] IMediator mediator, Guid Id)
         {
             try
@@ -24,7 +27,7 @@ namespace TesteCQRS.Controllers.Customer.Query
             }
             catch (ValidationException ex)
             {
-                var erros = ValidatorErrorsUtil.GetErrorsFromException(ex);
+                var erros = ValidatorErrorsUtil.GetErrorsFromValidationException(ex);
                 return BadRequest(erros);
 
             }
