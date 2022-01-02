@@ -17,7 +17,5 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
             var result = Task.FromResult(response);
             return await result;
         }
-
-
     }
 }

@@ -6,7 +6,7 @@ namespace TesteCQRS.Application.Commands.Customer.Validators
     {
         public CustomerDeleteCommandValidator()
         {
-            RuleFor(x=>x.Id).NotEmpty().WithMessage("Id é Obrigatório");
+            RuleFor(x => x.Id).NotEmpty().WithMessage("Id é Obrigatório");
         }
     }
 }

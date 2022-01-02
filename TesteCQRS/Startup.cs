@@ -30,10 +30,11 @@ namespace TesteCQRS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            var domain = "TesteCQRS.Application";
+            var assembly = AppDomain.CurrentDomain.Load(domain);
             services.AddControllers();
-            services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddFluentValidation(new[] { Assembly.GetExecutingAssembly() });
+            services.AddMediatR(assembly);
+            services.AddFluentValidation(new[] { assembly });
 
 
             services.AddSwaggerGen(c =>

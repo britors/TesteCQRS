@@ -4,7 +4,7 @@ using TesteCQRS.Application.Queries.Customer.Handlers.Responses;
 
 namespace TesteCQRS.Application.Queries.Customer
 {
-    public class CustomerFindAllQuery: IRequest<IList<CustomerFindAllResponse>>
+    public class CustomerFindAllQuery : IRequest<IList<CustomerFindAllResponse>>
     {
     }
 }

@@ -16,10 +16,9 @@ namespace TesteCQRS.Application.Queries.Customer.Handlers
                 Email = "rodrigo.brito@fcamara.com.br",
                 Name = "Rodrigo Brito"
             };
-            
+
             var response = Task.FromResult(item);
             return await response;
-            
         }
     }
 }
