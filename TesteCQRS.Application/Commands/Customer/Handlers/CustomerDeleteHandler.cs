@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
+using TesteCQRS.Application.Domain.Enums;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers
 {
@@ -12,7 +13,7 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
             var response = new CustomerDeleteResponse
             {
                 Id = request.Id,
-                Success = true
+                ProcessStatus = ProcessStatusEnum.Queue
             };
             var result = Task.FromResult(response);
             return await result;

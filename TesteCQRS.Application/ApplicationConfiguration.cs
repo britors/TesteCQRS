@@ -12,9 +12,9 @@ namespace TesteCQRS.Application
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<CustomerCreateCommand, CustomerModel>();
-                cfg.CreateMap<CustomerUpdateCommand, CustomerModel>();
-                cfg.CreateMap<CustomerFindByIdQuery, CustomerModel>();
+                cfg.CreateMap<CustomerCreateCommand, CustomerEntity>();
+                cfg.CreateMap<CustomerUpdateCommand, CustomerEntity>();
+                cfg.CreateMap<CustomerFindByIdQuery, CustomerEntity>();
             });
             IMapper mapper = config.CreateMapper();
             services.AddSingleton(mapper);
