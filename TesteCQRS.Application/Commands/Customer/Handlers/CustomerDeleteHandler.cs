@@ -13,7 +13,8 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
             var response = new CustomerDeleteResponse
             {
                 Id = request.Id,
-                ProcessStatus = ProcessStatusEnum.Queue
+                ProcessStatus = ProcessStatusEnum.Queue,
+                CorrelationId = request.CorrelationId
             };
             var result = Task.FromResult(response);
             return await result;

@@ -1,11 +1,9 @@
 ﻿using System;
-using TesteCQRS.Application.Domain.Enums;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers.Responses
 {
-    public class CustomerUpdateResponse
+    public sealed class CustomerUpdateResponse: QueueCommandResponse
     {
         public Guid Id { get; set; }
-        public ProcessStatusEnum ProcessStatus { get; set; }
     }
 }

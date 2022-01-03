@@ -20,7 +20,8 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
             var response = new CustomerUpdateResponse
             {
                 Id = customer.Id,
-                ProcessStatus = ProcessStatusEnum.Queue
+                ProcessStatus = ProcessStatusEnum.Queue,
+                CorrelationId = request.CorrelationId
             };
             var result = Task.FromResult(response);
             return await result;
