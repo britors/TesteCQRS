@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteCQRS.Application", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteCQRS.Shared", "TesteCQRS.Shared\TesteCQRS.Shared.csproj", "{6281CAA0-33C3-4C3C-92E2-2B1881E7874C}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{070D7BB9-1E70-42D6-8054-5BDA7CA0F988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6281CAA0-33C3-4C3C-92E2-2B1881E7874C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6281CAA0-33C3-4C3C-92E2-2B1881E7874C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6281CAA0-33C3-4C3C-92E2-2B1881E7874C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070D7BB9-1E70-42D6-8054-5BDA7CA0F988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070D7BB9-1E70-42D6-8054-5BDA7CA0F988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070D7BB9-1E70-42D6-8054-5BDA7CA0F988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070D7BB9-1E70-42D6-8054-5BDA7CA0F988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
