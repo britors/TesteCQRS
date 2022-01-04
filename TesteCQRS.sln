@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{E6288DE1-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{C5ED5755-EBE5-4F8F-80B8-8F2315A2506E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{2EF6D783-3EC5-4323-BCA7-7F63F54EC9C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customers", "Customers", "{2EF6D783-3EC5-4323-BCA7-7F63F54EC9C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A5A3F71B-F675-45BA-BD1E-1C6DF0585CD6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{D6241457-E216-49F6-BE1B-A06D3D7D2F8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCQRS.MessageBroker", "..\TesteCQRS.MessageBroker\TesteCQRS.MessageBroker.csproj", "{992C30DB-8E4A-495C-854A-8B0DE7E556CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteCQRS.MessageBroker", "..\TesteCQRS.MessageBroker\TesteCQRS.MessageBroker.csproj", "{992C30DB-8E4A-495C-854A-8B0DE7E556CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
