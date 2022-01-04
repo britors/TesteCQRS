@@ -7,7 +7,7 @@ namespace TesteCQRS.Application.Commands
     {
         public Guid CorrelationId { get => Guid.NewGuid(); }
         public string ProcessName { get => GetType().Name; }
-        public DateTime CreatedAt { get => DateTime.Now; }
+        public DateTime CreatedAt { get => DateTime.UtcNow; }
 
     }
 }

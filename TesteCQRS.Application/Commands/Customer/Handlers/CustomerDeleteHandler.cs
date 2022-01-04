@@ -2,8 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
-using TesteCQRS.Application.Infra.MessageBroker;
-using TesteCQRS.Application.Infra.MessageBroker.Strategies;
+using TesteCQRS.MessageBroker;
+using TesteCQRS.MessageBroker.Strategies;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers
 {

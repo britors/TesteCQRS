@@ -1,5 +1,5 @@
 ﻿using System;
-using TesteCQRS.Application.Domain.Enums;
+using TesteCQRS.MessageBroker.Domain;
 
 namespace TesteCQRS.Application.Commands
 {
