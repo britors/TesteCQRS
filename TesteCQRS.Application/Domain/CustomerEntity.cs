@@ -4,12 +4,6 @@ namespace TesteCQRS.Application.Domain
 {
     public class CustomerEntity
     {
-        public CustomerEntity(string name, string email)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-            Email = email;
-        }
         public CustomerEntity(Guid id, string name, string email)
         {
             Id = id;

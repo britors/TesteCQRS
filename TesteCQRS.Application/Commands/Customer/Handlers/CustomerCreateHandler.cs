@@ -1,26 +1,22 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
-using TesteCQRS.Application.Domain;
-using TesteCQRS.Application.Domain.Enums;
+using TesteCQRS.Application.Infra.MessageBroker;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers
 {
     public class CustomerCreateHandler : IRequestHandler<CustomerCreateCommand, CustomerCreateResponse>
     {
-        private readonly IMapper _mapper;
-        public CustomerCreateHandler(IMapper mapper) =>
-           _mapper = mapper;
-
         public async Task<CustomerCreateResponse> Handle(CustomerCreateCommand request, CancellationToken cancellationToken)
         {
-            var customer = _mapper.Map<CustomerEntity>(request);
+            var queueStatus = RabbitMQHelper.AddToQueue(request, request.ProcessName);
             var response = new CustomerCreateResponse
             {
-                Id = customer.Id,
-                ProcessStatus = ProcessStatusEnum.Queue,
+                Id = request.Id,
+                ProcessStatus = queueStatus,
+                CreatedAt = request.CreatedAt,
+                ProcessName = request.ProcessName,
                 CorrelationId = request.CorrelationId
             };
             var result = Task.FromResult(response);
