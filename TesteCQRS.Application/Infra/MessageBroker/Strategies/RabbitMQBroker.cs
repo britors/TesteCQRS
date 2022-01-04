@@ -3,12 +3,13 @@ using RabbitMQ.Client;
 using System;
 using System.Text;
 using TesteCQRS.Application.Domain.Enums;
+using TesteCQRS.Application.Infra.MessageBroker.Interfaces;
 
-namespace TesteCQRS.Application.Infra.MessageBroker
+namespace TesteCQRS.Application.Infra.MessageBroker.Strategies
 {
-    public static class RabbitMQHelper
+    public class RabbitMQBroker<TCommand>: IMessageBrokerStrategy<TCommand> where TCommand : class
     {
-        public static ProcessStatusEnum AddToQueue<TCommand>(TCommand request, string queueName) where TCommand : class
+        public ProcessStatusEnum AddToQueue(TCommand request, string queueName)
         {
             try
             {

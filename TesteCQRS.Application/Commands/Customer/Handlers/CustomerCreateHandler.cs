@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TesteCQRS.Application.Commands.Customer.Handlers.Responses;
 using TesteCQRS.Application.Infra.MessageBroker;
+using TesteCQRS.Application.Infra.MessageBroker.Strategies;
 
 namespace TesteCQRS.Application.Commands.Customer.Handlers
 {
@@ -10,7 +11,8 @@ namespace TesteCQRS.Application.Commands.Customer.Handlers
     {
         public async Task<CustomerCreateResponse> Handle(CustomerCreateCommand request, CancellationToken cancellationToken)
         {
-            var queueStatus = RabbitMQHelper.AddToQueue(request, request.ProcessName);
+            var messageBrokerContext = new MessageBrokerContext<CustomerCreateCommand>(new RabbitMQBroker<CustomerCreateCommand>());
+            var queueStatus = messageBrokerContext.AddToQueue(request, request.ProcessName);
             var response = new CustomerCreateResponse
             {
                 Id = request.Id,
