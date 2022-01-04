@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using TesteCQRS.Application.Commands.Customer;
 using TesteCQRS.Application.Domain;
 using TesteCQRS.Application.Queries.Customer;
 
@@ -12,8 +11,6 @@ namespace TesteCQRS.Application
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<CustomerCreateCommand, CustomerEntity>();
-                cfg.CreateMap<CustomerUpdateCommand, CustomerEntity>();
                 cfg.CreateMap<CustomerFindByIdQuery, CustomerEntity>();
             });
             IMapper mapper = config.CreateMapper();
