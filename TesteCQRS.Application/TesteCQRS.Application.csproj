@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TesteCQRS.MessageBroker\TesteCQRS.MessageBroker.csproj" />
+    <ProjectReference Include="..\TesteCQRS.MessageBroker\TesteCQRS.MessageBroker.csproj" />
   </ItemGroup>
 
 </Project>

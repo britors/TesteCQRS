@@ -37,7 +37,11 @@ services:
             - "E:\\mongodb:/data/db"
         ports:
             - "27017:27017"
-
+    customercreateworker:
+        image: ${DOCKER_REGISTER-}customercreatecommandworker
+        build:
+          context: .
+          dockerfile: CustomerCreateCommandWorker/Dockerfile
     testecqrs:
         image: ${DOCKER_REGISTRY-}testecqrs
         build:

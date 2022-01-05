@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CustomerCreateCommandWorker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
