@@ -12,7 +12,7 @@ namespace CustomerCreateCommandWorker
             var consumer = new RabbitMQConsumer(queueName);
             MessageReceiver receiver = new(consumer.GetChannel());
             consumer.CallReceiver(receiver);
-            Console.WriteLine("Worker CustomerCreateCommandWorker Is Workink");
+            Console.WriteLine("Worker CustomerCreateCommandWorker Waiting for new messages");
             Console.ReadLine();
         }
     }
