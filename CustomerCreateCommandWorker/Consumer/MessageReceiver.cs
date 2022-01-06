@@ -14,7 +14,13 @@ namespace CustomerCreateCommandWorker.Consumer
             _channel = channel;
 
 
-        public override void HandleBasicDeliver(string consumerTag, ulong deliveryTag, bool redelivered, string exchange, string routingKey, IBasicProperties properties, ReadOnlyMemory<byte> body)
+        public override void HandleBasicDeliver(string consumerTag,
+            ulong deliveryTag,
+            bool redelivered,
+            string exchange,
+            string routingKey,
+            IBasicProperties properties,
+            ReadOnlyMemory<byte> body)
         {
             Console.WriteLine("Recebendo Mensagem");
             var message = Encoding.UTF8.GetString(body.ToArray());

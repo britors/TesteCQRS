@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace CustomerCreateCommandWorker.Domain
+﻿namespace CustomerCreateCommandWorker.Domain
 {
     internal class Customer
     {

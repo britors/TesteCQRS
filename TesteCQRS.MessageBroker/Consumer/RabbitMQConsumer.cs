@@ -42,8 +42,7 @@ namespace TesteCQRS.MessageBroker.Consumer
         /// </summary>
         /// <param name="receiver"></param>
         public void CallReceiver(DefaultBasicConsumer receiver)
-        {
-            _channel.BasicConsume(_queueName, false, receiver);
-        }
+        =>  _channel.BasicConsume(_queueName, false, receiver);
+
     }
 }

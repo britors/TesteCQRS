@@ -8,7 +8,7 @@ namespace CustomerCreateCommandWorker
     {
         static void Main(string[] args)
         {
-            string queueName = "CustomerCreateCommand";
+            const string queueName = "CustomerCreateCommand";
             var consumer = new RabbitMQConsumer(queueName);
             MessageReceiver receiver = new(consumer.GetChannel());
             consumer.CallReceiver(receiver);
