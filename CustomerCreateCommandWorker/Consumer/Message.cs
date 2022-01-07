@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
+using TesteCQRS.MessageBroker.Domain;
 
 namespace CustomerCreateCommandWorker.Consumer
 {
@@ -11,11 +14,18 @@ namespace CustomerCreateCommandWorker.Consumer
             Email = email;
             CorrelationId = correlationId;
             ProcessName = processName;
+            ProcessStatus = ProcessStatusEnum.Queue;
             CreatedAt = createdAt;
         }
 
+
+        public void ChanceStatus(ProcessStatusEnum newStatus)
+            => ProcessStatus = newStatus;
+
         public Guid Id { get; private set; }
         public string Name { get; private set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ProcessStatusEnum ProcessStatus { get; private set; }
         public string Email { get; private set; }
         public Guid CorrelationId { get; private set; }
         public string ProcessName { get; private set; }

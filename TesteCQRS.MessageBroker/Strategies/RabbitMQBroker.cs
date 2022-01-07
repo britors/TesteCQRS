@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -25,7 +26,9 @@ namespace TesteCQRS.MessageBroker.Strategies
                                          exclusive: false,
                                          autoDelete: false,
                                          arguments: null);
-                var message = JsonConvert.SerializeObject(request);
+                var settings = new JsonSerializerSettings();
+                settings.Converters.Add(new StringEnumConverter());
+                var message = JsonConvert.SerializeObject(request, settings);
                 var body = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "",
