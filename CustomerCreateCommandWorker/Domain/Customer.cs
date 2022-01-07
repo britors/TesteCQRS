@@ -1,17 +1,19 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace CustomerCreateCommandWorker.Domain
 {
     internal class Customer
     {
-        public Customer(Guid Id, string name, string email)
+        public Customer(Guid id, string name, string email)
         {
-            CustomerId = Id.ToString();
+            Id = id;
             Name = name;
             Email = email;
         }
 
-        public string CustomerId { get; private set; }
+        [BsonId]
+        public Guid Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
     }

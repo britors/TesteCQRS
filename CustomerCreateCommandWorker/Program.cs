@@ -6,6 +6,7 @@ namespace CustomerCreateCommandWorker
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             const string queueName = "CustomerCreateCommand";
